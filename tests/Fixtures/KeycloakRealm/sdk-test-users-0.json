@@ -1,0 +1,18 @@
+{
+  "realm" : "sdk-test",
+  "users" : [ {
+    "id" : "c6d566e1-6234-407a-9c43-31b2a670a302",
+    "username" : "service-account-keycloak-php-sdk",
+    "emailVerified" : false,
+    "createdTimestamp" : 1716740375082,
+    "enabled" : true,
+    "totp" : false,
+    "serviceAccountClientId" : "keycloak-php-sdk",
+    "credentials" : [ ],
+    "disableableCredentialTypes" : [ ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "default-roles-sdk-test" ],
+    "notBefore" : 0,
+    "groups" : [ ]
+  } ]
+}

@@ -1,0 +1,27 @@
+services:
+  php:
+    image: php:8.3-alpine
+    command: 'ash'
+    working_dir: /usr/src
+    volumes:
+      - ${PWD}:/usr/src/
+    environment:
+      - KEYCLOAK_URL=http://keycloak:8080
+      - KEYCLOAK_REALM=sdk-test
+      - KEYCLOAK_CLIENT_ID=keycloak-php-sdk
+      - KEYCLOAK_CLIENT_SECRET=nsKMTkRKYzMbEVIsmF6kpCa7P0Fq9WRC
+    depends_on:
+      - keycloak
+
+  keycloak:
+    image: keycloak/keycloak:${KEYCLOAK_VERSION}
+    command: 'start-dev --import-realm'
+    container_name: local_keycloak
+    volumes:
+      - ${PWD}/tests/Fixtures/KeycloakRealm:/opt/keycloak/data/import
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=change_me
+      - KC_LOG_LEVEL=debug
+    ports:
+      - 28080:8080

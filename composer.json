@@ -1,0 +1,44 @@
+{
+  "name": "juliusstoerrle/keycloak-php-sdk",
+  "description": "PHP SDK for the Keycloak Admin API utilising PSR18",
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "authors": [
+    {
+      "name": "Julius Stoerrle",
+      "email": "juliusstoerrle@gmx.de"
+    }
+  ],
+  "require": {
+    "php": ">=8.3",
+    "lcobucci/jwt": "*",
+    "psr/http-client": "*",
+    "psr/http-factory": "*"
+  },
+  "require-dev": {
+    "pestphp/pest": "^2.34",
+    "symfony/http-client": "^7.0",
+    "nyholm/psr7": "^1.8",
+    "league/object-mapper": "dev-main@dev",
+    "rector/rector": "^1.1",
+    "monolog/monolog": "^3.6",
+    "mockery/mockery": "^1.6"
+  },
+  "suggest": {
+    "league/object-mapper": "dev-main@dev"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "JuliusStoerrle\\KeycloakPhpSdk\\": "src/"
+    }
+  },
+  "scripts": {
+    "rector": "./var/bin/rector",
+    "test": "./var/bin/pest"
+  }
+}

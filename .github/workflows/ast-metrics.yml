@@ -1,0 +1,8 @@
+name: AST Metrics
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: AST Metrics
+        uses: halleck45/action-ast-metrics@v1.0.5
